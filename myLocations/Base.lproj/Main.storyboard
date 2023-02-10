@@ -168,7 +168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afW-HG-KZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="464.80000000000001" y="116.49175412293854"/>
+            <point key="canvasLocation" x="353" y="197"/>
         </scene>
         <!--Map-->
         <scene sceneID="k5T-sx-Axk">
@@ -208,11 +208,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="7FB-ui-Rhp" id="mXb-ns-jYB"/>
+                        <segue destination="cj7-jO-52h" kind="show" identifier="EditLocation" id="e8T-wT-u7D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Iy-Ys-ajz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1504.8" y="447.52623688155927"/>
+            <point key="canvasLocation" x="-1479" y="780"/>
         </scene>
         <!--Locations-->
         <scene sceneID="8zs-Fg-tBP">
@@ -454,7 +455,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53o-3F-zko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280.80000000000001" y="-505.09745127436287"/>
+            <point key="canvasLocation" x="353" y="-660"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="eqi-DF-pzz">
@@ -557,7 +558,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tPe-Dn-mXa"/>
+        <segue reference="e8T-wT-u7D"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
