@@ -66,6 +66,19 @@ class LocationsDetailViewController: UITableViewController {
         } else {
             hudView.text = "Tagged"
             location = Location(context: managedObjectContext)
+            location.photoID = nil
+        }
+        if let image = image {
+            if !location.hasPhoto {
+                location.photoID = Location.nextPhotoID() as NSNumber
+            }
+            if let data = image.jpegData(compressionQuality: 0.5) {
+                do {
+                    try data.write(to: location.photoURL, options: .atomic)
+                } catch {
+                    print("error writing file: \(error)")
+                }
+            }
         }
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
@@ -109,6 +122,11 @@ class LocationsDetailViewController: UITableViewController {
         super.viewDidLoad()
         if let location = locationToEdit {
             title = "Edit Location"
+            if  location.hasPhoto {
+                if let theImage = location.photoImage {
+                    show(image: theImage)
+                }
+            }
         }
         descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
@@ -183,13 +201,15 @@ class LocationsDetailViewController: UITableViewController {
             controller.selectedCategoryName = categoryName
         }
     }
-    /*
+    
     func show(image: UIImage) {
         imageView.image = image
         imageView.isHidden = false
         addPhotoLabel.text = ""
+        imageHeight.constant = 260
+        tableView.reloadData()
     }
-   */
+   
 }
 extension LocationsDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK:- Image Helper Methods

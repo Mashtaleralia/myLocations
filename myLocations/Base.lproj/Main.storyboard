@@ -127,18 +127,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k33-QK-Cym">
-                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k33-QK-Cym">
+                                            <rect key="frame" x="76" y="11" width="94.5" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-Ia-Hde">
-                                            <rect key="frame" x="16" y="37" width="343" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-Ia-Hde">
+                                            <rect key="frame" x="76" y="37" width="53" height="17"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <color key="highlightedColor" systemColor="labelColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Zw-1A-HKd">
+                                            <rect key="frame" x="16" y="2" width="52" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="zum-Ia-Hde" firstAttribute="top" secondItem="k33-QK-Cym" secondAttribute="bottom" constant="5" id="1bw-9T-dbK"/>
@@ -147,13 +151,12 @@
                                         <constraint firstItem="k33-QK-Cym" firstAttribute="top" secondItem="4qi-wb-rCV" secondAttribute="topMargin" id="Afh-Jv-0PF"/>
                                         <constraint firstItem="zum-Ia-Hde" firstAttribute="top" secondItem="k33-QK-Cym" secondAttribute="bottom" constant="5" id="Kjd-Yx-dRJ"/>
                                         <constraint firstAttribute="trailing" secondItem="zum-Ia-Hde" secondAttribute="trailing" constant="16" id="PNg-ei-EEJ"/>
-                                        <constraint firstItem="k33-QK-Cym" firstAttribute="leading" secondItem="4qi-wb-rCV" secondAttribute="leadingMargin" id="aNV-gk-KnL"/>
-                                        <constraint firstItem="zum-Ia-Hde" firstAttribute="leading" secondItem="4qi-wb-rCV" secondAttribute="leading" constant="16" id="lgf-Um-B2G"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="zum-Ia-Hde" id="oaT-EJ-zQq"/>
                                     <outlet property="descriptionLabel" destination="k33-QK-Cym" id="btb-FR-Ul3"/>
+                                    <outlet property="photoImageView" destination="7Zw-1A-HKd" id="Zyn-7q-aFd"/>
                                     <segue destination="cj7-jO-52h" kind="show" identifier="EditLocation" id="tPe-Dn-mXa"/>
                                 </connections>
                             </tableViewCell>
@@ -571,7 +574,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e8T-wT-u7D"/>
+        <segue reference="tPe-Dn-mXa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
