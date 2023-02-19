@@ -174,26 +174,14 @@ class LocationsDetailViewController: UITableViewController {
         return dateFormatter.string(from: date)
     }
     func string(from placemark: CLPlacemark) -> String {
-        var text = ""
-        if let s = placemark.subThoroughfare {
-            text += s + " "
-        }
-        if let s = placemark.thoroughfare {
-            text += s + ", "
-        }
-        if let s = placemark.locality {
-            text += s + ", "
-        }
-        if let s = placemark.administrativeArea {
-            text += s + " "
-        }
-        if let s = placemark.postalCode {
-            text += s + ", "
-        }
-        if let s = placemark.country {
-            text += s
-        }
-        return text
+    var line = ""
+        line.add(text: placemark.subThoroughfare)
+        line.add(text: placemark.thoroughfare, separatedBy: " ")
+        line.add(text: placemark.locality, separatedBy: ", ")
+        line.add(text: placemark.administrativeArea, separatedBy: ", ")
+        line.add(text: placemark.postalCode, separatedBy: " ")
+        line.add(text: placemark.country, separatedBy: ", ")
+        return line
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PickCategory" {
